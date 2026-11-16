@@ -1,0 +1,215 @@
+{
+  "title": "Lab 10 - Fixing Errors",
+  "cases": [
+    {
+      "type": "header",
+      "name": "Header is filled in"
+    },
+    {
+      "type": "output",
+      "name": "Item found, valid number",
+      "stdin": [
+        "milk",
+        "4"
+      ],
+      "expect": [
+        "Which item price do you want to check? The price of milk is $3.0",
+        "How many people are sharing the cost? That will be $2.50 per person.",
+        "Checking the 6th item on your list...",
+        "There is no 6th item",
+        "You have 3 items on your list.",
+        "Goodbye!"
+      ]
+    },
+    {
+      "type": "output",
+      "name": "Missing item, word for a number",
+      "stdin": [
+        "kiwi",
+        "two"
+      ],
+      "expect": [
+        "Which item price do you want to check? Sorry, 'kiwi' is not on the price list.",
+        "How many people are sharing the cost? Invalid Number",
+        "Checking the 6th item on your list...",
+        "There is no 6th item",
+        "You have 3 items on your list.",
+        "Goodbye!"
+      ]
+    },
+    {
+      "type": "output",
+      "name": "Other item, uneven split",
+      "stdin": [
+        "bananas",
+        "3"
+      ],
+      "expect": [
+        "Which item price do you want to check? The price of bananas is $1.75",
+        "How many people are sharing the cost? That will be $3.33 per person.",
+        "Checking the 6th item on your list...",
+        "There is no 6th item",
+        "You have 3 items on your list.",
+        "Goodbye!"
+      ]
+    },
+    {
+      "type": "comments",
+      "name": "Code is commented",
+      "min": 7
+    }
+  ],
+  "challenges": [
+    {
+      "title": "Challenge - Crash-Proof Program",
+      "file": "challenges/try_except_challenge.py",
+      "cases": [
+        {
+          "type": "uses",
+          "name": "Uses try and except",
+          "words": [
+            "try",
+            "except"
+          ]
+        },
+        {
+          "type": "comments",
+          "name": "Code is commented",
+          "min": 3
+        }
+      ]
+    },
+    {
+      "title": "Challenge - Safe Divide",
+      "file": "challenges/safe_divide.py",
+      "function": "safe_divide",
+      "cases": [
+        {
+          "type": "function",
+          "name": "Uneven division",
+          "function": "safe_divide",
+          "args": [
+            7,
+            2
+          ],
+          "expect": "7 / 2 = 3.50"
+        },
+        {
+          "type": "function",
+          "name": "Negative result",
+          "function": "safe_divide",
+          "args": [
+            -9,
+            4
+          ],
+          "expect": "-9 / 4 = -2.25"
+        },
+        {
+          "type": "function",
+          "name": "Decimals",
+          "function": "safe_divide",
+          "args": [
+            2.5,
+            0.5
+          ],
+          "expect": "2.5 / 0.5 = 5.00"
+        },
+        {
+          "type": "function",
+          "name": "Divide by zero",
+          "function": "safe_divide",
+          "args": [
+            3,
+            0
+          ],
+          "expect": "Error: Cannot divide by zero."
+        },
+        {
+          "type": "function",
+          "name": "Text instead of a number",
+          "function": "safe_divide",
+          "args": [
+            "8",
+            2
+          ],
+          "expect": "Error: Both values must be numbers."
+        },
+        {
+          "type": "uses",
+          "name": "Catches each error by name",
+          "words": [
+            "try",
+            "except",
+            "ZeroDivisionError",
+            "TypeError"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Challenge - Total the Values",
+      "file": "challenges/total_values.py",
+      "function": "total_values",
+      "cases": [
+        {
+          "type": "function",
+          "name": "All numbers",
+          "function": "total_values",
+          "args": [
+            [
+              "5",
+              "6",
+              "0.25"
+            ]
+          ],
+          "expect": "Total: 11.25 (0 skipped)"
+        },
+        {
+          "type": "function",
+          "name": "One word, a negative",
+          "function": "total_values",
+          "args": [
+            [
+              "10",
+              "-2.25",
+              "abc"
+            ]
+          ],
+          "expect": "Total: 7.75 (1 skipped)"
+        },
+        {
+          "type": "function",
+          "name": "Words and None",
+          "function": "total_values",
+          "args": [
+            [
+              "1",
+              null,
+              "x",
+              "2.5",
+              "3"
+            ]
+          ],
+          "expect": "Total: 6.50 (2 skipped)"
+        },
+        {
+          "type": "function",
+          "name": "Empty list",
+          "function": "total_values",
+          "args": [
+            []
+          ],
+          "expect": "Total: 0.00 (0 skipped)"
+        },
+        {
+          "type": "uses",
+          "name": "Uses try and except",
+          "words": [
+            "try",
+            "except"
+          ]
+        }
+      ]
+    }
+  ]
+}
