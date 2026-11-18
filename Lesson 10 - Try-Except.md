@@ -122,6 +122,45 @@ of the try block. Ideally a try block does not hold a lot of unrelated code
 An `else` after the last except runs only if everything in the try block
 succeeded.
 
+## Converting input()
+
+`input()` always gives back a string, even when the user types digits. To do
+math with it we convert it with `int()`:
+
+```python
+age = int(input("How old are you? "))
+print(f"Next year you will be {age + 1}.")
+```
+
+Run this and type `15`. It works. Now run it again and type `fifteen`:
+
+```
+How old are you? fifteen
+Traceback (most recent call last):
+  File "try_except.py", line 107, in <module>
+    age = int(input("How old are you? "))
+ValueError: invalid literal for int() with base 10: 'fifteen'
+```
+
+`int()` was given a string, which is the correct type, but the value inside it
+is not a whole number. That makes it a **ValueError**. `15.5` and an empty
+entry (just pressing Enter) cause the same error.
+
+We cannot control what the user types, so any `int(input())` can crash. Wrap it
+in try/except:
+
+```python
+try:
+    age = int(input("How old are you? "))
+except ValueError:
+    print("That is not a whole number.")
+else:
+    print(f"Next year you will be {age + 1}.")
+```
+
+The `print` goes in `else`, not after the try/except. If the conversion fails,
+`age` never gets a value, so using it afterwards would cause a NameError.
+
 ## Best practices
 
 1. Keep each try block short. Include only code that might cause an error, or

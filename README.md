@@ -1,7 +1,7 @@
 # Lab 10 - Fixing Errors
 
-`main.py` already contains a short program with five numbered blocks (`#1` to
-`#5`). Each block can crash. Your job is to stop the crashes with try/except.
+`main.py` already contains a short program with six numbered blocks (`#1` to
+`#6`). Each block can crash. Your job is to stop the crashes with try/except.
 
 Do **not** delete or change any of the existing code. Wrap it in try/except
 instead.
@@ -15,11 +15,13 @@ Open `main.py` and complete the following:
 5. Block #2: if the number of people is not a number, print `Invalid Number`
 6. Block #3: if there is no 6th item, print `There is no 6th item`
 7. Block #4: in the except, print the message the code was trying to build, with the correct number of items: `You have 3 items on your list.` (use `len(item_list)`, do not type the 3).
-8. Block #5: `final_greeting` does not exist. In the except, print `Goodbye!`
+8. Block #5: if the number of bags is not a whole number, print `Please enter a whole number.`
+9. Block #5 challenge: keep asking until a whole number is entered. Put a loop around the try/except so the question repeats after every bad entry, and stops once the conversion works.
+10. Block #6: `final_greeting` does not exist. In the except, print `Goodbye!`
 
-The two prompts are already in the code: `Which item price do you want to check? `
-and `How many people are sharing the cost? `. Assume the number of people is
-never 0.
+The three prompts are already in the code: `Which item price do you want to check? `,
+`How many people are sharing the cost? ` and `How many bags of apples do you want? `.
+Assume the number of people is never 0.
 
 ## Running your program
 

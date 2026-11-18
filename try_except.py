@@ -1,11 +1,11 @@
 #-----------------------------------------------------------------------------
 # Name:        Try/Except (try_except.py)
 # Purpose:     Demonstrating common errors and handling them with try, except,
-#              else and finally
+#              else and finally, including converting input() to an int
 #
 # Author:      Mr. Kowalczewski
 # Created:     28-Sept-2026
-# Updated:     28-Sept-2026
+# Updated:     18-Nov-2026
 #-----------------------------------------------------------------------------
 
 # --- Common errors (remove one # at a time to see each crash) ----------------
@@ -97,3 +97,21 @@ else:
 # finally runs after try or except, either way
 finally:
     print("What does this do?")
+
+
+# --- Converting input() to an int -------------------------------------------
+# input() always returns a string. int() raises a ValueError if that string is
+# not a whole number (try: 15, fifteen, 15.5, or just pressing Enter).
+
+# Without try/except: uncomment, run, and type "fifteen" to see the crash
+#age = int(input("How old are you? "))
+#print(f"Next year you will be {age + 1}.")
+
+# With try/except: the program keeps running
+try:
+    age = int(input("How old are you? "))
+except ValueError:
+    print("That is not a whole number.")
+# age only exists if the conversion worked, so use it in else
+else:
+    print(f"Next year you will be {age + 1}.")

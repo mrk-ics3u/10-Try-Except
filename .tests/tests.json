@@ -10,7 +10,8 @@
       "name": "Item found, valid number",
       "stdin": [
         "milk",
-        "4"
+        "4",
+        "3"
       ],
       "expect": [
         "Which item price do you want to check? The price of milk is $3.0",
@@ -18,6 +19,7 @@
         "Checking the 6th item on your list...",
         "There is no 6th item",
         "You have 3 items on your list.",
+        "How many bags of apples do you want? 3 bags will cost $7.50.",
         "Goodbye!"
       ]
     },
@@ -26,7 +28,9 @@
       "name": "Missing item, word for a number",
       "stdin": [
         "kiwi",
-        "two"
+        "two",
+        "two",
+        "2"
       ],
       "expect": [
         "Which item price do you want to check? Sorry, 'kiwi' is not on the price list.",
@@ -34,6 +38,8 @@
         "Checking the 6th item on your list...",
         "There is no 6th item",
         "You have 3 items on your list.",
+        "How many bags of apples do you want? Please enter a whole number.",
+        "How many bags of apples do you want? 2 bags will cost $5.00.",
         "Goodbye!"
       ]
     },
@@ -42,7 +48,10 @@
       "name": "Other item, uneven split",
       "stdin": [
         "bananas",
-        "3"
+        "3",
+        "",
+        "1.5",
+        "4"
       ],
       "expect": [
         "Which item price do you want to check? The price of bananas is $1.75",
@@ -50,13 +59,16 @@
         "Checking the 6th item on your list...",
         "There is no 6th item",
         "You have 3 items on your list.",
+        "How many bags of apples do you want? Please enter a whole number.",
+        "How many bags of apples do you want? Please enter a whole number.",
+        "How many bags of apples do you want? 4 bags will cost $10.00.",
         "Goodbye!"
       ]
     },
     {
       "type": "comments",
       "name": "Code is commented",
-      "min": 7
+      "min": 8
     }
   ],
   "challenges": [

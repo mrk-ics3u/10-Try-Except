@@ -34,4 +34,9 @@ print(message)
 
 
 #5
+quantity = int(input("How many bags of apples do you want? "))
+print(f"{quantity} bags will cost ${quantity * item_costs['apples']:.2f}.")
+
+
+#6
 print(final_greeting)
